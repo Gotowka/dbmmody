@@ -246,14 +246,5 @@ module.exports = {
     }
   },
 
-  //---------------------------------------------------------------------
-  // Action Bot Mod
-  //
-  // Upon initialization of the bot, this code is run. Using the bot's
-  // DBM namespace, one can add/modify existing functions if necessary.
-  // In order to reduce conflicts between mods, be sure to alias
-  // functions you wish to overwrite.
-  //---------------------------------------------------------------------
-
   mod() {},
 };
