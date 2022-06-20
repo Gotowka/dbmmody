@@ -2,11 +2,11 @@ module.exports = {
     name: 'Store Bot Client Info',
     section: 'Bot Client Control',
     meta: {
-      version: '2.1.1',
+      version: '2.1.4',
       preciseCheck: false,
-      author: 'DBM Mods',
-      authorUrl: 'https://github.com/dbm-network/mods',
-      downloadURL: 'https://github.com/dbm-network/mods/blob/master/actions/store_bot_client_info_MOD.js',
+      author: 'Gotowka',
+      authorUrl: 'https://github.com/Gotowka/dbmmody/blob/main/beta/store_bot_client_info.js',
+      downloadURL: 'https://github.com/Gotowka/dbmmody/blob/main/beta/store_bot_client_info.js',
     },
   
     subtitle(data) {
