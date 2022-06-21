@@ -52,7 +52,7 @@ module.exports = {
 
 
 
-  meta: { version: "2.1.4", preciseCheck: true, author: 'Gotowka', authorUrl: 'https://github.com/Gotowka/autorskieakcje/blob/main/store_gotowa_info.js', downloadUrl: 'https://github.com/Gotowka/autorskieakcje/blob/main/store_gotowa_info.js' },
+  meta: { version: "2.1.5", preciseCheck: true, author: 'Gotowka', authorUrl: 'https://github.com/Gotowka/autorskieakcje/blob/main/store_gotowa_info.js', downloadUrl: 'https://github.com/Gotowka/autorskieakcje/blob/main/store_gotowa_info.js' },
 
 
 

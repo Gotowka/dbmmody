@@ -36,7 +36,7 @@ module.exports = {
     // This will make it so the patch version (0.0.X) is not checked.
     //---------------------------------------------------------------------
   
-    meta: { version: "2.1.4", preciseCheck: true, author: 'Gotowka', authorUrl: 'https://github.com/Gotowka/dbmmody/blob/main/beta/create_together.js', downloadUrl: 'https://github.com/Gotowka/dbmmody/blob/main/beta/create_together.js' },
+    meta: { version: "2.1.5", preciseCheck: true, author: 'Gotowka', authorUrl: 'https://github.com/Gotowka/dbmmody/blob/main/beta/create_together.js', downloadUrl: 'https://github.com/Gotowka/dbmmody/blob/main/beta/create_together.js' },
   
     //---------------------------------------------------------------------
     // Action Fields

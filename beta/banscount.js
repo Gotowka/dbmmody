@@ -57,7 +57,7 @@ module.exports = {
     // This will make it so the patch version (0.0.X) is not checked.
     //---------------------------------------------------------------------
   
-    meta: { version: "2.1.4", preciseCheck: true, author: "Gotowka", authorUrl: "https://github.com/gotowka", downloadUrl: "https://github.com/gotowka" },
+    meta: { version: "2.1.5", preciseCheck: true, author: "Gotowka", authorUrl: "https://github.com/gotowka", downloadUrl: "https://github.com/gotowka" },
   
     //---------------------------------------------------------------------
     // Action Fields
