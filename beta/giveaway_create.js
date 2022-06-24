@@ -75,7 +75,7 @@ module.exports = {
         <br>
 
         <span class="dbminputlabel">Description</span>
-        <input id="description" class="round" type="text" placeholder="[end] = Data kiedy konkurs się kończy">
+        <textarea id="description" class="dbm_monospace" rows="4" placeholder="[end] = Data zakończenia konkursu" white-space: nowrap; resize: none;"></textarea>
         
         <br>
 
@@ -88,9 +88,6 @@ module.exports = {
         <input id="footertext" class="round" type="text">
         
         <br>
-
-        <span class="dbminputlabel">Footer Icon</span>
-        <input id="footericon" class="round" type="text">
 
         <br>
 
@@ -117,6 +114,11 @@ module.exports = {
         
       <span class="dbminputlabel">Emoji (id) <span style="color:red">*</span></span>
       <input id="find" class="round" type="text">
+      
+      <br>
+
+      <span class="dbminputlabel">Footer Icon</span>
+      <input id="footericon" class="round" type="text">
       
       <br>
     </div>
