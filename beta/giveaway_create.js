@@ -64,7 +64,7 @@ module.exports = {
     <div>
         <p>
             <u>Mod Info:</u><br>
-            Created by money#6283
+            Created by money#6283\n[end] = Data zakończenia konkursu, [presa] = Nagroda, [author.tag] = Nazwa + tag, [author.username] = Nazwa, [author.id] = Id
         </p>
     </div><br>
 
@@ -75,7 +75,7 @@ module.exports = {
         <br>
 
         <span class="dbminputlabel">Description</span>
-        <textarea id="description" class="dbm_monospace" rows="4" placeholder="[end] = Data zakończenia konkursu" white-space: nowrap; resize: none;"></textarea>
+        <textarea id="description" class="dbm_monospace" rows="4" placeholder="Wszystkie dostępne skróty masz dostępne w Mod Info" white-space: nowrap; resize: none;"></textarea>
         
         <br>
 
@@ -171,7 +171,11 @@ module.exports = {
       duration = time2 * 1e3 * 60 * 60;
   }
   const end = Date.parse(new Date(new Date().getTime() + duration)) / 1000;
-  const description = await d1.replace('[end]', `<t:${end}:f>`)
+  const d2 = await d1.replace('[end]', `<t:${end}:f>`)
+  const d3 = await d2.replace('[presa]', nagroda)
+  const d4 = await d3.replace('[author.tag]', author.user.tag)
+  const d5 = await d4.replace('[author.name]', author.user.username)
+  const description = await d5.replade('[author.id]', author.id)
     const embed = new MessageEmbed()
     if(title) embed.setTitle(title)
     if(description) embed.setDescription(description)
