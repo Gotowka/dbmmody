@@ -72,7 +72,7 @@
 
     async action(cache) {
       const data = cache.actions[cache.index];
-      let time = parseInt(this.evalMessage(data.time, cache), 10);
+      let time = this.evalMessage(data.time, cache)
       const storage = parseInt(data.storage, 10);
       const varName = this.evalMessage(data.VarName, cache);
       const channel = await this.getChannel(storage, varName, cache);
