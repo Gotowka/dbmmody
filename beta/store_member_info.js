@@ -57,6 +57,8 @@ module.exports = {
       "Member Server Avatar URL",
       "Member Timed Out At",
       "Member Timed Out Timestamp",
+      "Member Boosted At",
+      "Member Boosted At"
     ];
     return `${presets.getMemberText(data.member, data.varName)} - ${info[parseInt(data.info, 10)]}`;
   },
@@ -149,6 +151,9 @@ module.exports = {
       case 32:
         dataType = "Timestamp";
         break;
+      case 34:
+        dataType = "Timestamp";
+        break;
     }
     return [data.varName2, dataType];
   },
@@ -227,6 +232,7 @@ module.exports = {
 		<option value="25">Member Joined Timestamp</option>
 		<option value="27">Member Permission List</option>
 		<option value="28">Member Flags List</option>
+    <option value="34">Member Boosted At</option>
 		<option value="29">Member Client Status</option>
 		<option value="22">Member Timed Out At</option>
 		<option value="23">Member Timed Out Timestamp</option>
@@ -378,6 +384,10 @@ module.exports = {
         break;
       case 33:
         result = member.communicationDisabledUntilTimestamp;
+        break;
+      case 34:
+        await member.fetch()
+        result = member.premiumSince;
         break;
       default:
         break;
