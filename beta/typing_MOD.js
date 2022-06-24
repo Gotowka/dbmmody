@@ -78,7 +78,7 @@
       const channel = await this.getChannel(storage, varName, cache);
 
       try {
-        data.typing === '0' ? channel.startTyping(time) : channel.stopTyping();
+        data.typing === '0' ? channel.sendTyping(time) : channel.stopTyping();
       } catch (e) {
         console.error(`ERROR! ${e}${e.stack}`);
       }
