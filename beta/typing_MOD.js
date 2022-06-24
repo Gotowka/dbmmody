@@ -39,7 +39,7 @@
     <div style=width: 45%;">
 		<span class="dbminputlabel">Time</span><br>
 		<select id="measurement" class="round">
-			<option value="0">Milliseconds</option>
+			<option value="0">Seconds</option>
 		</select>
 	</div>
   <br>
@@ -73,6 +73,13 @@
     async action(cache) {
       const data = cache.actions[cache.index];
       let time = this.evalMessage(data.time, cache)
+      const measurement = parseInt(this.evalMessage(data.measurement, cache), 10)
+
+     switch (measurement) {
+      case 0:
+        time *= 1e3;
+        break;
+     }
       const storage = parseInt(data.storage, 10);
       const varName = this.evalMessage(data.VarName, cache);
       const channel = await this.getChannel(storage, varName, cache);
