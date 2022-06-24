@@ -4,7 +4,7 @@ Mody do dbma
 Mody pobierają się w .zip (opcja code)
 i przesyłasz je do [FolderBota > actions] Usuwasz wszystko i zamieniasz!
 
-Ostatnia aktualizacja modów: 25-6-2022 01:32
+Ostatnia aktualizacja modów: 25-6-2022 01:43
 
 # Ostatnie aktualizacje 
 
