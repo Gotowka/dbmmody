@@ -148,18 +148,18 @@ module.exports = {
     const { interaction } = cache
     const { MessageEmbed } = require("discord.js");
     const author = interaction.member
-    const title = data.title
-    const d1 = data.description
-    const color = data.color
-    const footertext = data.footertext
-    const footericon = data.footericon
-    let time = data.time
+    const title = this.evalMessage(data.title, cache)
+    const d1 = this.evalMessage(data.description, cache)
+    const color = this.evalMessage(data.color, cache)
+    const footertext = this.evalMessage(data.footertext, cache)
+    const footericon = this.evalMessage(data.footericon, cache)
+    let time = this.evalMessage(data.time, cache)
     const type = parseInt(data.type, 10);
-    const emoji = data.find
-    const nagroda = data.nagroda
+    const emoji = this.evalMessage(data.find, cache)
+    const nagroda = this.evalMessage(data.nagroda, cache)
     const channel = interaction.channel
     let duration
-    let time2 = data.time
+    let time2 = this.evalMessage(data.time, cache)
     const ttype = data.type
     if (ttype.includes("0")) {
       duration = time2 * 1e3;
