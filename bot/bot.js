@@ -14,7 +14,7 @@
    console.log(
      `This version of Discord Bot Maker requires discord.js ${requiredDjsVersion}+.\nPlease use "Project > Module Manager" and "Project > Reinstall Node Modules" to update to discord.js ${requiredDjsVersion}.\n`,
    );
-   throw new Error(`Zainstaluj moduł \n npm i discord.js@${requiredDjsVersion} --save`);
+   throw new Error(`Zainstaluj moduł \n npm i discord.js@13.8.0 --save`);
  }
  
  const noop = () => void 0;
