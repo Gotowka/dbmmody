@@ -8,6 +8,8 @@ Ostatnia aktualizacja modów: 25-6-2022 01:45
 
 # Ostatnie aktualizacje 
 
+Dodano akcje - [graj](https://github.com/Gotowka/dbmmody/blob/main/beta/play_all.js)
+
 Poprawiono akcje - [typing_mod](https://github.com/Gotowka/dbmmody/blob/main/beta/typing_MOD.js)
 
 Dodano opcje kiedy ktoś zboostował serwer - [store_member_info](https://github.com/Gotowka/dbmmody/blob/main/beta/store_member_info.js)
