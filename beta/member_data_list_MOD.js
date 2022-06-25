@@ -5,8 +5,8 @@ module.exports = {
     version: '2.1.5',
     preciseCheck: false,
     author: 'DBM Mods',
-    authorUrl: 'https://github.com/dbm-network/mods',
-    downloadURL: 'https://github.com/dbm-network/mods/blob/master/actions/member_data_list_MOD.js',
+    authorUrl: 'https://github.com/Gotowka/dbmmody/blob/main/beta/member_data_list_MOD.js',
+    downloadURL: 'https://github.com/Gotowka/dbmmody/blob/main/beta/member_data_list_MOD.js',
   },
 
   subtitle(data) {
