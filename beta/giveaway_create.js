@@ -175,7 +175,7 @@ module.exports = {
   const d3 = await d2.replace('[presa]', nagroda)
   const d4 = await d3.replace('[author.tag]', author.user.tag)
   const d5 = await d4.replace('[author.name]', author.user.username)
-  const description = await d5.replade('[author.id]', author.id)
+  const description = await d5.replace('[author.id]', author.id)
     const embed = new MessageEmbed()
     if(title) embed.setTitle(title)
     if(description) embed.setDescription(description)
