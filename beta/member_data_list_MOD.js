@@ -110,7 +110,7 @@ module.exports = {
 
   async action(cache) {
     const data = cache.actions[cache.index];
-    const { msg } = cache;
+    const { msg, interaction } = cache;
     const storage = parseInt(data.storage, 10);
     const varName2 = this.evalMessage(data.varName2, cache);
     const st = this.evalMessage(data.start, cache);
@@ -153,7 +153,9 @@ module.exports = {
             });
 
             try {
-              const user = msg.guild.members.cache.get(result[i]);
+              let user
+              if (interaction) user = interaction.guild.members.cache.get(result[i]);
+              if (msg) user = msg.guild.members.cache.get(result[i]);
               const { tag } = user.user;
 
               list.push({
