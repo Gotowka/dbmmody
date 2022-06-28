@@ -4,17 +4,16 @@ Mody do dbma
 Mody pobierają się w .zip (opcja code)
 i przesyłasz je do [FolderBota > actions] Usuwasz wszystko i zamieniasz!
 
-Ostatnia aktualizacja modów: 26-6-2022 00:50
+Ostatnia aktualizacja modów: 28-6-2022 14:41
 
 # Ostatnie aktualizacje
 
-Poprawiono metadata version (2.1.5) [variable_pattern_MOD](https://github.com/Gotowka/dbmmody/blob/main/beta/variable_pattern_MOD.js)
+Dodano możliwość ustawienia własnej zmiennej - [create_together](https://github.com/Gotowka/dbmmody/blob/main/beta/create_together.js)
 
-Usunięto akcje create_embed_message_MOD
 
-Poprawiono akcje [giveaway_create](https://github.com/Gotowka/dbmmody/blob/main/beta/giveaway_create.js)
+Dodano możliwość wyszukania categori - [store_category_info_MOD](https://github.com/Gotowka/dbmmody/blob/main/beta/store_category_info_MOD.js)
 
-Poprawiono akcje [member_data_list_MOD](https://github.com/Gotowka/dbmmody/blob/main/beta/member_data_list_MOD.js)
 
-Dodano akcje - [graj](https://github.com/Gotowka/dbmmody/blob/main/beta/play_all.js)
+Usunięto akcje - Find Category MOD
+
 
