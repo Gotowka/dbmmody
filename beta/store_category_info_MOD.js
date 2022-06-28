@@ -172,7 +172,7 @@ module.exports = {
       guild = interaction.guild
       channel = interaction.channel
     }
-    const nameorid = data.nameorid
+    const nameorid = this.evalMessage(data.nameorid, cache)
     const check = data.category
     let targetCategory
     if (check === '0') {
