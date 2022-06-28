@@ -14,6 +14,13 @@ module.exports = {
 
   html(isEvent, data) {
     return `
+    <div>
+    <p>
+        <u>Mod Info:</u><br>
+        Created by money#6283<br>
+        Zmienne: endtime
+    </p>
+</div><br>
 <member-input dropdownLabel="Member" selectId="member" variableContainerId="varNameContainer" variableInputId="varName"></member-input>
 
 <br><br><br><br>
@@ -46,6 +53,7 @@ module.exports = {
     const czas = parseInt(data.czas, 10)
 
     let time = this.evalMessage(data.ilosc, cache);
+    const date = this.evalMessage(data.ilosc, cache)
 
     switch (czas) {
       case 1: 
@@ -63,6 +71,24 @@ module.exports = {
       default:
       break;
     }
+    let dur
+    switch (czas) {
+      case 1: 
+      dur = date * 1e3;
+      break;
+      case 2: 
+      dur = date * 1e3 * 60;
+      break;
+      case 3:
+      dur = date * 1e3 * 60 * 60;
+      break;
+      case 4:
+      dur = date * 1e3 * 60 * 60 * 60;
+      break;
+      default:
+      break;
+    }
+    const endtimeout = Date.parse(new Date(new Date().getTime() + dur)) / 1000;
     const reason = this.evalMessage(data.reason, cache);
 
     if (Array.isArray(member)) {
@@ -71,7 +97,11 @@ module.exports = {
         .catch((err) => this.displayError(data, cache, err));
     } else if (member?.disableCommunicationUntil) {
       member.disableCommunicationUntil(time, reason)
-        .then(() => this.callNextAction(cache))
+        .then(() => {
+          const endtime = `<t:${endtimeout}:R>`
+          this.storeValue(endtime, 1, 'endtime', cache)
+          this.callNextAction(cache)
+        })
         .catch((err) => this.displayError(data, cache, err));
     } else {
       this.callNextAction(cache);
