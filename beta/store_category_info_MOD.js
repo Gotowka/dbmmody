@@ -5,12 +5,11 @@ module.exports = {
     version: '2.1.5',
     preciseCheck: false,
     author: 'DBM Mods',
-    authorUrl: 'https://github.com/dbm-network/mods',
-    downloadURL: 'https://github.com/dbm-network/mods/blob/master/actions/store_category_info_MOD.js',
+    authorUrl: 'https://github.com/Gotowka/dbmmody/blob/main/beta/store_category_info_MOD.js',
+    downloadURL: 'https://github.com/Gotowka/dbmmody/blob/main/beta/store_category_info_MOD.js',
   },
 
   subtitle(data) {
-    const categories = ['You cheater!', 'Temp Variable', 'Server Variable', 'Global Variable'];
     const info = [
       'Category ID',
       'Category Name',
@@ -25,7 +24,7 @@ module.exports = {
       'Category Voice Channel List',
       'Category Voice Channel Count',
     ];
-    return `${categories[parseInt(data.category, 10)]} - ${info[parseInt(data.info, 10)]}`;
+    return `${info[parseInt(data.info, 10)]}`;
   },
 
   variableStorage(data, varType) {
@@ -66,20 +65,22 @@ module.exports = {
     return [data.varName2, dataType];
   },
 
-  fields: ['category', 'varName', 'info', 'storage', 'varName2'],
+  fields: ['category', 'nameorid', 'info', 'storage', 'varName2'],
 
   html(isEvent, data) {
     return `
 <div>
   <div style="float: left; width: 35%;">
     Source Category:<br>
-    <select id="category" class="round" onchange="glob.refreshVariableList(this)">
-      ${data.variables[1]}
+    <select id="category" class="round">
+    <option value="0">By ID</option>
+    <option value="1">By NAME</option>
+    <option value="2">Same</option>
     </select>
   </div>
   <div id="varNameContainer" style="float: right; width: 60%;">
-    Variable Name:<br>
-    <input id="varName" class="round" type="text" list="variableList"><br>
+    Source:<br>
+    <input id="nameorid" class="round" type="text"<br>
   </div>
 </div><br><br><br>
 <div>
@@ -160,10 +161,31 @@ module.exports = {
 
   async action(cache) {
     const data = cache.actions[cache.index];
-    const category = parseInt(data.category, 10);
-    const varName = this.evalMessage(data.varName, cache);
+    const { msg, interaction } = cache
+    let guild
+    let channel
+    if (msg) {
+      guild = msg.guild
+      channel = msg.channel
+    }
+    if (interaction) {
+      guild = interaction.guild
+      channel = interaction.channel
+    }
+    const nameorid = data.nameorid
+    const check = data.category
+    let targetCategory
+    if (check === '0') {
+      targetCategory = guild.channels.cache.get(nameorid)
+    }
+    if (check === '1') {
+      targetCategory = guild.channels.cache.get(c => c.type === 'category', c.name === nameorid)
+    }
+    if (check === '2') {
+      const ch = channel.parentId
+      targetCategory = guild.channels.cache.get(ch)
+    }
     const info = parseInt(data.info, 10);
-    const targetCategory = this.getVariable(category, varName, cache);
     if (!targetCategory) return this.callNextAction(cache);
 
     let result;
