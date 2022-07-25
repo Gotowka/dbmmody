@@ -111,6 +111,7 @@ module.exports = {
   async action(cache) {
     const data = cache.actions[cache.index];
     const { DiscordJS, Images } = this.getDBM();
+    const { interaction } = cache
 
     const storage = parseInt(data.storage, 10);
     const varName = this.evalMessage(data.varName, cache);
@@ -141,8 +142,8 @@ module.exports = {
             })
             .catch((err) => this.displayError(data, cache, err));
         } else if (target?.send) {
-          target
-            .send({
+          interaction
+          .reply({
               content: this.evalMessage(data.message, cache),
               files: [new DiscordJS.MessageAttachment(buffer, "image.png")],
             })
